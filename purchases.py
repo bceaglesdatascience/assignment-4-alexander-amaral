@@ -15,7 +15,7 @@ while purchase_number > 0:
 
 def add_tax(cost_list,tax):
     for cost in cost_list:
-        new_cost = cost*(1+tax)
+        new_cost = round((cost*(1+tax)), 2)
         new_cost_list.append(new_cost)
     return new_cost_list
         
@@ -26,7 +26,7 @@ purchases = {}
 for x in range(len(customer_list)):
     customer = customer_list[x]
     new_cost = new_cost_list[x]
-    if customer in customer_list:
+    if customer[x] in customer_list:
         new_cost += new_cost
         purchases[customer] = new_cost
     else:
